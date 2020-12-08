@@ -1,7 +1,6 @@
 <?php
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -20,38 +19,19 @@ session_start();
         <script type="text/javascript" src="script.js"></script>
         <title>Nina Coach Vocal</title>
 </head>
-
-<?php if (!isset($_SESSION['name'])) header ('Location: pageMembresDisconneted.php');
-      else if ($_SESSION['name']=='admin') header ('Location: admin.php'); ?>
-
-<body>
-
-<header>
-
-
-</header>
-
-<?php
-include "script.php";
-
-$pdo = getPDO($config);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-?>
-
 <body onmousewheel="hideNav();" onscroll="arrowUp();">
 
     <!--NAVBAR-->
     <div class="container-fluid nav navbar-fixed-top" id="menu">
             <ul class="nav__ul">
                 <li class="nav__link nav__logo">Coaching Vocal</li>
-                <li class="nav__link"><a href="index.php">Home</a></li>
-                <li class="nav__link"><a href="#">A propos</a></li>
+                <li class="nav__link"><a href="#">Home</a></li>
+                <li class="nav__link"><a href="about.html">A propos</a></li>
                 <li class="nav__link"><a href="#">Mes services</a></li>
                 <li class="nav__link"><a href="#">Contact</a></li>
                 <li class="nav__link"><a href="#">Blog</a></li>
                 <li class="nav__link nav__login"><?php if (isset($_SESSION['name'])) {
-                echo "<span style='padding-right: 40px; color: #ffffff;'>".$_SESSION['name']."</span><br/>";
+                echo "<a href='pageMembresConnected.php' style='padding-right: 40px; color: #ffffff;'>".$_SESSION['name']."</a><br/>";
                 echo "<a href='deconnexion.php'>Déconnexion</a>";
                 }
                 else echo "<a href='pageMembresDisconnected.php'>Connexion / Inscription</a>";?> </li>
@@ -82,12 +62,44 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         <h1 class="heading__title">Vocal</h1>
     </div>
 
-    <div class="container">
-        <h3><?php if (isset($_SESSION['name'])) {
-            echo "<p class='welcomePerso'>Bonjour ".$_SESSION['name'].".<br/>Bienvenue dans votre espace personnel.</p><br/>";
-        }
-        ?> </h3>
+
+    <!--Flèche de retour au top-->
+    <div class="container-fluid arrowTop">
+        <a href="#">
+            <img src="../Public/images/arrowup.png" alt="">
+        </a>
     </div>
+
+        <script type="text/javascript">
+            $('.arrowTop').hide();
+            function arrowUp() {
+                $('.arrowTop').fadeIn('slow');
+            }
+        </script>
+    
+    <div class="container entries">
+        <?php
+
+        $cnx = new PDO("mysql:host=localhost:3306;dbname=coachingvocal;charset=utf8","root", "");
+
+        $requete = "SELECT title, post, date_post FROM entries";
+        $reponse = $cnx->query($requete);
+
+
+        while($data = $reponse->fetch()) { ?>
+            <form name="formForum" action="session.php" method="post" class="container " style="border:1px solid black; text-align: center; margin-left:10px; margin-bottom: 10px;">
+                <article id="<?php echo $data['title'];?>">
+                    <?php
+                    echo "<h2>".$data['title']."</h2></br>";
+                    echo "<p>".$data['post']."</p></br>";
+                    echo "Publié le ".$data['date_post']."</br>";?>
+                </article>
+                <button type="submit" class="bouton" name="redirectionForum">Lire ce fil</button>
+            </form>
+            <?php } ?><br/><br/><br/>
+    </div>
+
+
 
     <!--FOOTER-->
 
@@ -105,5 +117,8 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         </div>
     </div>
 
+    
 </body>
 </html>
+
+

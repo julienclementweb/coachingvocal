@@ -142,6 +142,11 @@ a:hover {
   height: 200px;
 }
 
+/* ENTRIES */
+.entries {
+  margin-top: 50px;
+}
+
 /* COMPONENTS */
 .mybtn {
   text-align: center;
@@ -149,8 +154,8 @@ a:hover {
   margin-top: 4rem;
 }
 .mybtn__design {
-  border: 3px solid #FFE300;
-  border-radius: 3rem;
+  border: 2px solid #FFE300;
+  border-radius: 6px;
   padding: 1.5rem 3rem 1.5rem 3rem;
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
@@ -161,7 +166,7 @@ a:hover {
   color: #000000;
 }
 .mybtn__design:hover {
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 
 .separator {

@@ -164,6 +164,12 @@ a {
         height: 200px;
     }
 
+    /* ENTRIES */
+
+    .entries {
+        margin-top: 50px;
+    }
+
 
 /* COMPONENTS */
 
@@ -172,8 +178,8 @@ a {
     margin: auto;
     margin-top: 4rem;
         &__design {
-            border: 3px solid $color-primary;
-            border-radius: 3rem;
+            border: 2px solid $color-primary;
+            border-radius: 6px;
             padding: 1.5rem 3rem 1.5rem 3rem;
             text-transform: uppercase;
             font-family: 'Open Sans', sans-serif;
@@ -184,7 +190,7 @@ a {
             color: #000000;
         }
         &__design:hover {
-            transform: scale(1.1);
+            transform: scale(1.02);
         }
 }
 

@@ -97,6 +97,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               else {
                   $name = $_POST['name'];
                   $password = $_POST['password'];
+                  $hash = password_hash($password, PASSWORD_DEFAULT);
 
                   $pdo = getPDO($config);
                   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -105,7 +106,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                   $resultat = getUser($pdo, $name, $password);
 
                   if (isset($resultat)) {
-                    if ($resultat['password']==$password) {
+                    if (password_verify($password, $hash)) {
                       $temp = getUser($pdo,$name,$password);
                       $_SESSION['id_user'] = $temp['id_user'];
                       $_SESSION['name'] = $name;
@@ -156,9 +157,9 @@ if (isset($_POST['validerInscription'])) {
               while ($user = $temp->fetch()) {
                   if ($user['name'] == $name) {
                       echo"<script type='text/javascript'>alert('Le pseudonyme rentré est déjà utilisé !');
-                          window.location.replace(\"index.php\");</script>";
+                          window.location.replace(\"pageMembresDisconnected.php\");</script>";
                   }
-              }
+              } ;
                 $pdo = getPDO($config);
                 $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -177,9 +178,23 @@ if (isset($_POST['validerInscription'])) {
 }
 ?>
 
+    <!--FOOTER-->
 
+    <div class="container-fluid separatorFooter">
+    </div>
 
+    <div class="container-fluid footer">
+        <div class="container legal">
+            <span>© Coaching Vocal - 
+                    Tous droits réservés | 
+                    <a href="#">Mentions légales</a><br><br>
+                    Site créé par 
+                    <a href="https://julienclement-portfolio.com/" target="_blank">JCW</a>
+            </span>
+        </div>
+    </div>
 
+</body>
 </html>
 
 

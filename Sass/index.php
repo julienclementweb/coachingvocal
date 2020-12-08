@@ -29,9 +29,9 @@ session_start();
                 <li class="nav__link"><a href="about.html">A propos</a></li>
                 <li class="nav__link"><a href="#">Mes services</a></li>
                 <li class="nav__link"><a href="#">Contact</a></li>
-                <li class="nav__link"><a href="#">Blog</a></li>
+                <li class="nav__link"><a href="blog.php">Blog</a></li>
                 <li class="nav__link nav__login"><?php if (isset($_SESSION['name'])) {
-                echo "<span style='padding-right: 40px; color: #ffffff;'>".$_SESSION['name']."</span><br/>";
+                echo "<a href='pageMembresConnected.php' style='padding-right: 40px; color: #ffffff;'>".$_SESSION['name']."</a><br/>";
                 echo "<a href='deconnexion.php'>Déconnexion</a>";
                 }
                 else echo "<a href='pageMembresDisconnected.php'>Connexion / Inscription</a>";?> </li>
