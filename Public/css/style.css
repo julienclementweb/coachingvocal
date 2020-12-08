@@ -1,0 +1,244 @@
+@charset "UTF-8";
+/* VARIABLES */
+/* MIXINS */
+/* LAYOUT */
+body, html {
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #000000;
+}
+a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+
+.nav {
+  margin: 0 auto;
+  padding: 0;
+  min-height: 80px;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.nav__ul {
+  text-align: center;
+  padding-top: 2.5rem;
+}
+.nav__link {
+  list-style: none;
+  display: inline-flex;
+}
+.nav__link > a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  margin: 0 1.5rem;
+}
+.nav__link > a:hover {
+  color: #FFE300;
+}
+.nav__login {
+  float: right;
+}
+.nav__logo {
+  float: left;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.heading {
+  min-height: 389px;
+  height: auto;
+  margin-top: 80px;
+  box-shadow: 0 0.3rem 0.9rem #000000;
+  background: linear-gradient(0deg, rgba(255, 227, 0, 0.7), rgba(255, 227, 0, 0.7)), url("../images/image1.jpg");
+}
+.heading__title {
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: 10rem;
+  text-align: center;
+  line-height: 10rem;
+  letter-spacing: 1.7rem;
+  text-shadow: 0.5rem 0.5rem #ccb600;
+}
+.heading__title--top {
+  padding-top: 7rem;
+}
+
+.punchline {
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: bold;
+  padding-top: 50px;
+}
+
+/*SECTION 1-3*/
+.section {
+  margin-bottom: 10rem;
+}
+.section__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+.section__content {
+  margin: auto;
+  width: 40%;
+  text-align: justify;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.7rem;
+  line-height: 3rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+/*SECTION 2*/
+.section__images {
+  text-align: center;
+}
+.section__images > a {
+  margin: auto;
+}
+.section__images > a:hover {
+  background: linear-gradient(0deg, rgba(255, 227, 0, 0.7), rgba(255, 227, 0, 0.7)), url("../images/mic.jpg");
+  cursor: pointer;
+}
+.section__images > img:hover {
+  box-shadow: 0.3rem 0.3rem 0.7rem #000000;
+}
+
+/* SECTION CONTACT*/
+.form-control {
+  border: 1px solid #000000;
+  border-radius: 1rem;
+  font-family: "Open sans" sans-serif;
+  margin: auto;
+  width: 65%;
+  box-shadow: 0.1rem 0.1rem 0.5rem #000000;
+}
+.form-control:focus {
+  background-color: #FFE300;
+  border: 2px solid #000000;
+  color: #000000;
+}
+
+.loginForm {
+  padding-top: 80px;
+}
+
+/*FOOTER*/
+.footer {
+  background-color: #000000;
+  height: 200px;
+}
+
+/* COMPONENTS */
+.mybtn {
+  text-align: center;
+  margin: auto;
+  margin-top: 4rem;
+}
+.mybtn__design {
+  border: 3px solid #FFE300;
+  border-radius: 3rem;
+  padding: 1.5rem 3rem 1.5rem 3rem;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  box-shadow: 0.3rem 0.3rem 0.7rem #000000;
+  transition: transform 500ms;
+  color: #000000;
+}
+.mybtn__design:hover {
+  transform: scale(1.1);
+}
+
+.separator {
+  background-image: url("../images/polygone.png");
+  background-repeat: no-repeat;
+  height: 20rem;
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
+
+.separatorFooter {
+  background-image: url("../images/polygone.png");
+  background-repeat: no-repeat;
+  height: 20rem;
+  margin-top: 5rem;
+}
+
+hr {
+  margin: 5rem auto;
+  width: 40%;
+  height: 2px;
+  background-color: #000000;
+  border: none;
+  /*on supprime le style par défaut*/
+}
+
+.legal {
+  text-align: center;
+  color: #FFFFFF;
+  padding-top: 12rem;
+}
+.legal > span > a {
+  color: #FFFFFF;
+}
+.legal > span > a:hover {
+  text-decoration: none;
+  color: #FFE300;
+}
+
+.arrowTop {
+  height: 6rem;
+  width: 6rem;
+  position: fixed;
+  margin-left: 1rem;
+}
+
+.loginForm {
+  text-align: center;
+}
+
+/* PAGE MEMBRES */
+.welcomePerso {
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 750px) {
+  .heading__title {
+    font-size: 4rem;
+  }
+
+  .section__images {
+    margin-top: 5rem;
+  }
+
+  .section__content {
+    width: 100%;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  .heading__title {
+    font-size: 3rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

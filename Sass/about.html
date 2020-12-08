@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../public/css/style.css">
+        <link rel="stylesheet" href="../Public/css/mobile.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <title>Nina Coach Vocal - A PROPOS</title>
+</head>
+<body onmousewheel="hideNav();" onscroll="arrowUp();">
+
+    <!--NAVBAR-->
+    <div class="container-fluid nav navbar-fixed-top" id="menu">
+            <ul class="nav__ul">
+                <li class="nav__link"><a href="index.html">Home</a></li>
+                <li class="nav__link"><a href="about.html">A propos</a></li>
+                <li class="nav__link"><a href="#">Mes services</a></li>
+                <li class="nav__link"><a href="#">Contact</a></li>
+            </ul>
+    </div>
+
+        <!--Script pour apparition et disparition de la Nav au scroll-->
+        <script type="text/javascript">
+            // Initial state
+            let scrollPos = 0;
+            // adding scroll event
+            window.addEventListener('scroll', function(){
+            // detects new state and compares it with the new one
+            if ((document.body.getBoundingClientRect()).top > scrollPos)
+                    $('#menu').fadeIn();
+                else
+                $('#menu').fadeOut();
+                // saves the new position for iteration.
+                scrollPos = (document.body.getBoundingClientRect()).top;
+            });
+        </script>
+
+
+    <!--HEADER-->
+    <div class="container-fluid heading">
+        <h1 class="heading__title heading__title--top">a</h1>
+        <h1 class="heading__title">propos</h1>
+    </div>
+
+    <!--SECTION 3-->
+
+    <div class="container-fluid section">
+
+        <div class="section__content">
+ 
+
+
+        </div>
+        <div class="container mybtn">
+            <div class="btn mybtn__design"></div>
+        </div>
+    </div>
+
+
+    <!--FOOTER-->
+
+    <div class="container-fluid separatorFooter">
+    </div>
+
+    <div class="container-fluid footer">
+        <div class="container legal">
+            <span>© Coaching Vocal - 
+                    Tous droits réservés | 
+                    <a href="#">Mentions légales</a><br><br>
+                    Site créé par 
+                    <a href="https://julienclement-portfolio.com/" target="_blank">JCW</a>
+            </span>
+        </div>
+    </div>
+
+    
+</body>
+</html>
